@@ -1,0 +1,108 @@
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-left >img {
+    width: 150px;
+    height: 60px;
+    padding: 5px;
+}
+
+.header-left >h2 {
+    font-size: 20px;
+    color: white;
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-lists >li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.header-lists >li> a:hover {
+    color: rgb(103, 203, 103)
+}
+
+.header-lists >li>a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-center-menu > a {
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.header-center-menu > button {
+    padding: 10px;
+}
+
+.dropDown-items {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    min-width: 220px;
+    min-height: 120px;
+    float: left;
+    background-color: rgba(204, 226, 211, 0.701);
+    justify-content: center;
+    align-items: center;
+}
+
+.dropDown-items > a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dropDown-items > a:hover {
+    background-color: rgb(148, 205, 148);
+}
+
+.header-center-menu:hover > .dropDown-items{
+    display: block;
+}
+
+.header-right {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right > button {
+    background-color: beige;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px;
+}

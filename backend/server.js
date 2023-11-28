@@ -13,14 +13,48 @@ const db = mysql.createConnection({
   database: "signup",
 });
 
+db.connect((err) => {
+  if (err) {
+    console.error("Database connection failed: " + err.stack);
+    return;
+  }
+  console.log("Connected to database");
+});
+
+// app.post("/signup", (req, res) => {
+//   const sql = "INSERT INTO login (`name`, `email`, `password`) VALUES (?)";
+//   const values = [req.body.name, req.body.email, req.body.password];
+//   db.query(sql, [values], (err, data) => {
+//     if (err) {
+//       return res.json("Error");
+//     }
+//     if (req.body.email) {
+//       return res.json("email already exists, please use another email");
+//     }
+//     return res.json(data);
+//   });
+// });
+
 app.post("/signup", (req, res) => {
-  const sql = "INSERT INTO login (`name`, `email`, `password`) VALUES (?)";
-  const values = [req.body.name, req.body.email, req.body.password];
-  db.query(sql, [values], (err, data) => {
-    if (err) {
-      return res.json("Error");
+  const { name, email, password } = req.body;
+
+  // Kiểm tra sự trùng lặp
+  db.query("SELECT * FROM login WHERE email = ?", [email], (err, values) => {
+    if (err) throw err;
+
+    if (values.length > 0) {
+      res.status(409).json({ message: "Email already exists" });
+    } else {
+      // Thêm người dùng vào cơ sở dữ liệu
+      db.query(
+        "INSERT INTO login (name, email, password) VALUES (?, ?, ?)",
+        [name, email, password],
+        (err) => {
+          if (err) throw err;
+          res.status(201).json({ message: "User registered successfully" });
+        }
+      );
     }
-    return res.json(data);
   });
 });
 
