@@ -1,108 +1,81 @@
 .header {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: green;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
+  padding-left: 50px;
+  background-color:#25af4c; /* Màu nền của header */
+  color: #fff; /* Màu chữ trong header */
+  padding: 5px; /* Khoảng cách giữa nội dung và mép của header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+.logo {
+    height: 50px;
 }
 
-.header-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.search-bar {
+  margin: 0 10px; /* Khoảng cách giữa thanh tìm kiếm và các phần tử xung quanh */
 }
 
-.header-left >img {
-    width: 150px;
-    height: 60px;
-    padding: 5px;
+.user-info {
+  position: relative;
 }
 
-.header-left >h2 {
-    font-size: 20px;
-    color: white;
+.user-info p {
+  color: #000;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px;
+  background-color: #ffffff; /* Màu nền của phần thông tin cá nhân */
+  border-radius: 5px;
 }
 
-.header-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #555; /* Màu nền của phần thông tin cá nhân mở rộng */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #444;
+  border-radius: 5px;
+  display: none;
+  z-index: 100;
 }
 
-.header-lists {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.user-info:hover .options {
+  display: block;
 }
 
-.header-lists >li {
-    list-style-type: none;
-    padding: 10px;
+.options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.header-lists >li> a:hover {
-    color: rgb(103, 203, 103)
-}
-
-.header-lists >li>a {
-    text-decoration: none;
-    color: white;
-}
-
-.header-center-menu > a {
-    padding: 5px;
-    color: white;
-    text-decoration: none;
-}
-
-.header-center-menu > button {
-    padding: 10px;
-}
-
-.dropDown-items {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    min-width: 220px;
-    min-height: 120px;
-    float: left;
-    background-color: rgba(204, 226, 211, 0.701);
-    justify-content: center;
-    align-items: center;
-}
-
-.dropDown-items > a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 15px;
-    display: flex;
+.options li {
     justify-content: flex-start;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
 }
 
-.dropDown-items > a:hover {
-    background-color: rgb(148, 205, 148);
+.options li:last-child {
+  border-bottom: none;
 }
 
-.header-center-menu:hover > .dropDown-items{
-    display: block;
+/* @media screen and (max-width: 992px) {
+  .header-left {
+    justify-content: unset;
+  }
 }
-
-.header-right {
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media screen and (max-width: 992px) {
+  .header-center {
+    display: none;
+  }
 }
-
-.header-right > button {
-    background-color: beige;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0 10px;
-}
+@media screen and (max-width: 992px) {
+  .header-right {
+    display: none;
+  }
+} */

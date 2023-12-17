@@ -1,0 +1,26 @@
+.slidetop {
+    padding: 15px ;
+    box-sizing: border-box;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+.carousel-slide {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.img{
+    max-width: 100%;
+    width: 1800px;
+    height: 400px;
+}
+
+@media screen and (min-width: 1200px) {
+    .slidetop {
+    width: 1170px;
+}
+}

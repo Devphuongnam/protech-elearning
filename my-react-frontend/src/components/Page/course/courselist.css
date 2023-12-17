@@ -1,0 +1,56 @@
+.course-list {
+    text-align: center;
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    width: 1200px;
+    max-width: 100%;
+}
+
+.course {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.course-image {
+  max-width: 100%;
+  width: 100%;
+  height: 150px; 
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.course-list button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Kiểu hover cho nút sắp xếp */
+.course-list button:hover {
+  background-color: #45a049;
+}
+
+@media (min-width: 768px) {
+  .course {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .course {
+    width: calc(33.33% - 20px);
+  }
+}

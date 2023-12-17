@@ -1,0 +1,87 @@
+    .course-interview {
+        margin: 0;
+    padding: 0;
+        box-sizing: border-box;
+        margin-right: auto;
+        margin-left: auto;
+        width: 1200px;
+        max-width: 100%;
+    }
+
+    .course-image {
+        padding-top: 20px;
+    text-align: center;
+    align-items: center;
+}
+.course-comment {
+        box-sizing: border-box;
+        position: absolute;
+
+}
+    .course-interview img {
+        max-width: 50%;
+        width: 1200px;
+        height: 100%;
+    }
+
+    .course-name {
+        font-size: 25px;
+        font-variant: normal;
+        color: green;
+        text-decoration: underline;
+    }
+
+    .course-comment {
+        align-items: center;
+    }
+
+    .course-description {
+        color: #b79d9d;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+.course-detail-description {
+    line-height: 40px;
+    background-color: #e8e2e294;
+    padding: 10px;
+    font-size: 18px;
+    }
+
+    .enter-room {
+        text-align: center;
+        align-items: center;
+        font-size: 30px;
+    }
+
+nav {
+    padding: 15px;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1200px;
+    max-width: 100%;
+    }
+
+ul.breadcrumb {
+    list-style: none;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    }
+
+    ul.breadcrumb li {
+    margin-right: 5px;
+    display: inline-block
+    }
+
+    ul.breadcrumb li a {
+    text-decoration: none;
+    color: black;
+    }
+
+    ul.breadcrumb li a:hover {
+    text-decoration: underline;
+    }

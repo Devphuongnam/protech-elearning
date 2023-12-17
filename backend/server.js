@@ -1,10 +1,32 @@
 const mysql = require("mysql");
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const bodyParser = require("body-parser");
 
 const app = express();
-app.use(cors());
+app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
+app.use(cookieParser());
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,
+      maxAge: 1000 * 60 * 60 * 24,
+    },
+  })
+);
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -20,20 +42,6 @@ db.connect((err) => {
   }
   console.log("Connected to database");
 });
-
-// app.post("/signup", (req, res) => {
-//   const sql = "INSERT INTO login (`name`, `email`, `password`) VALUES (?)";
-//   const values = [req.body.name, req.body.email, req.body.password];
-//   db.query(sql, [values], (err, data) => {
-//     if (err) {
-//       return res.json("Error");
-//     }
-//     if (req.body.email) {
-//       return res.json("email already exists, please use another email");
-//     }
-//     return res.json(data);
-//   });
-// });
 
 app.post("/signup", (req, res) => {
   const { name, email, password } = req.body;
@@ -59,17 +67,49 @@ app.post("/signup", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const sql = "SELECT * FROM login WHERE `email` = ? AND `password` = ?";
+  const sql = "SELECT * FROM login WHERE email = ? AND password = ?";
   db.query(sql, [req.body.email, req.body.password], (err, data) => {
     if (err) {
-      return res.json("Error");
+      return res.json({ Message: "Error inside Server" });
     }
     if (data.length > 0) {
-      return res.json("Success");
+      req.session.name = data[0].name;
+      req.session.email = data[0].email;
+      return res.json({
+        Login: true,
+        name: req.session.name,
+        email: req.session.email,
+      });
     } else {
-      return res.json("Faile");
+      return res.json({ Login: false });
     }
   });
+});
+
+app.get("/name", async (req, res) => {
+  if ((req.session.name, req.session.email)) {
+    return res.json({
+      valid: true,
+      name: req.session.name,
+      email: req.session.email,
+    });
+  }
+  {
+    return res.json({ valid: false });
+  }
+});
+
+app.get("/user", async (req, res) => {
+  if ((req.session.name, req.session.email)) {
+    return res.json({
+      valid: true,
+      name: req.session.name,
+      email: req.session.email,
+    });
+  }
+  {
+    return res.json({ valid: false });
+  }
 });
 
 app.listen(8081, () => {

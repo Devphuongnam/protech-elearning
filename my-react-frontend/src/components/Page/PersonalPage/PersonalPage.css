@@ -1,0 +1,22 @@
+.personal-user {
+  margin-top: 50px;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #25af4c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.personal-user h2 {
+    color: rgb(255, 255, 255);
+    font: 3em sans-serif;
+}
+.personal-user-detail {
+  background-color: bisque;
+}
+
+.personal-user-detail p {
+  font: 1.5em sans-serif;
+}

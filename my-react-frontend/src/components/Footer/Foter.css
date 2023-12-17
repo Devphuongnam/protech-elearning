@@ -1,0 +1,28 @@
+.footer {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(37, 175, 76);
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.footer-left {
+    color: white;
+}
+
+.footer-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-center {
+    color: white;
+}
+
+.footer-right {
+    color: white;
+}
