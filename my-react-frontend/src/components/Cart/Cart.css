@@ -1,0 +1,17 @@
+.cart-count {
+    float: right;
+    padding-top: 5px;
+}
+
+.cart-count span {
+    cursor: pointer;
+    background-color: red;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cart-count span sup {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+

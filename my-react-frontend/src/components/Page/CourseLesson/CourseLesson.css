@@ -1,0 +1,69 @@
+.course-lesson {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.course-lesson-container {
+  width:700px;
+  margin:0 auto;
+}
+
+.course-lesson-container h2 {
+    font-size:30px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+margin: 10px 0;
+padding: 10px 0;
+
+}
+
+.course-lesson-container ul {
+list-style-type: none;
+list-style-type: decimal; /*IE 7- hack*/
+margin: 0;
+margin-left: 1em;
+padding: 0;
+counter-reset: li-counter;
+}
+
+.course-lesson-container ul li{
+position: relative;
+margin-bottom: 1.5em;
+padding: 0.5em;
+background-color: #F0D756;
+padding-left: 58px;
+}
+
+.course-lesson-container a{
+text-decoration:none;
+color:rgb(45, 44, 44);
+font-size:25px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.course-lesson-container li:hover{
+box-shadow:inset -1em 0 #6CD6CC;
+-webkit-transition: box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
+transition: box-shadow 0.5s;
+}
+
+.course-lesson-container ul li:before {
+position: absolute;
+top: -0.2em;
+left: -1em;
+width: 1.8em;
+height: 1.2em;
+font-size: 2em;
+line-height: 1.2;
+font-weight: bold;
+text-align: center;
+color: white;
+background-color: #6CD6CC;
+transform: rotate(-20deg);
+-ms-transform: rotate(-20deg);
+-webkit-transform: rotate(-20deg);
+z-index: 99;
+overflow: hidden;
+content: counter(li-counter);
+counter-increment: li-counter;
+}

@@ -1,0 +1,42 @@
+/* Add this to styles.css */
+.lesson-question {
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.lesson-question-container{
+    padding: 20px;
+}
+
+.lesson-question-container h2 {
+  color: #666;
+}
+
+.lesson-question-container ul {
+  padding: 0;
+  list-style: none;
+
+}
+
+.lesson-question button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.lesson-question button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.lesson-question button.selected {
+  background-color: #008CBA;
+}

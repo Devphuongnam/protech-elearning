@@ -1,7 +1,8 @@
 import React from "react";
 import "./Header.css";
-import SearchBar from "./SearchBar";
 import UserProfile from "./UserProfile";
+import Cart from "../Cart/Cart";
+import { CartProvider } from "../Cart/CartContext";
 
 const Header = () => {
   return (
@@ -15,10 +16,13 @@ const Header = () => {
           />
         </a>
       </div>
-      <div className="search-bar">
-        <SearchBar />
+      <div className="search-bar">{/* <SearchBar /> */}</div>
+      <div className="abc">
+        <div className="shopping"></div>
+        <div className="user-profile">
+          <UserProfile />
+        </div>
       </div>
-      <UserProfile />
     </div>
   );
 };

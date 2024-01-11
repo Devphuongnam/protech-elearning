@@ -1,0 +1,28 @@
+.comment-list-container {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-list-container li {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.comment-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-date {
+  color: #666;
+}
+
+.comment-text {
+  margin: 0;
+}

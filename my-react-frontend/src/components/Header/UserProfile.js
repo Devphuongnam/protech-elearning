@@ -32,10 +32,29 @@ const UserProfile = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleLogout = () => {
-    sessionStorage.clear();
-    navigate("/login");
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:8081/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", // Để đảm bảo gửi cookie của session
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        navigate("/login");
+        console.log("Logged out successfully");
+      } else {
+        console.error("Logout failed:", data.error);
+      }
+    } catch (error) {
+      console.error("Error during logout:", error);
+    }
   };
+
   return (
     <div className="user-info">
       {isLoggedIn ? (

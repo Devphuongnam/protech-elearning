@@ -1,0 +1,75 @@
+.course-list {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.course-list .course-sort-top {
+  display: -webkit-inline-flex;
+  align-items: center;
+}
+
+.course-sort button {
+  padding: 5px;
+}
+
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  width: 1200px;
+  max-width: 100%;
+}
+
+.course-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.course-list ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+.course-list li {
+  width: 30%; /* Chia 3 khoá học trong một hàng */
+  margin: 1%;
+  padding: 15px;
+  background-color: #cce6c7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.course-list li:hover {
+  transform: scale(1.05);
+}
+
+.course-list img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover; /* Giữ nguyên tỉ lệ chiều ngang và chiều cao */
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.search-course {
+  z-index: 1;
+}

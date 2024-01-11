@@ -1,10 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Validation from "./LoginValidation";
 import axios from "axios";
-import { GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
-import { AuthContext } from "../context/Authprovider";
 
 function Login() {
   const [values, setValues] = useState({
@@ -14,19 +12,6 @@ function Login() {
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  // const auth = getAuth();
-  // const { user } = useContext(AuthContext);
-
-  // const handleLoginWithGoogle = async () => {
-  //   const provider = new GoogleAuthProvider();
-  //   const res = await signInWithPopup(auth, provider);
-  //   console.log({ res });
-  // };
-
-  // if (user?.uid) {
-  //   navigate("/");
-  //   return;
-  // }
 
   const handleInput = (event) => {
     setValues((prev) => ({
@@ -120,38 +105,15 @@ function Login() {
                       )}
                     </div>
 
-                    {/* <div className="form-check d-flex justify-content-center mb-4">
-                      <input
-                        className="form-check-input me-2"
-                        type="checkbox"
-                        value="0"
-                      />
-                      <label className="form-check-label">
-                        Ghi nhớ đăng nhập
-                      </label>
-                    </div> */}
-
                     <div className="d-flex justify-content-between">
                       <button type="submit" className="btn btn-success">
                         Đăng nhập
                       </button>
-
                       <Link to="/signup" className="btn btn-secondary">
                         Đăng ký
                       </Link>
                     </div>
                   </form>
-
-                  {/* <div className="text-center">
-                    <p>Hoặc đăng nhập với</p>
-                    <button
-                      className="btn btn-primary"
-                      style={{ backgroundColor: "#dd4b39" }}
-                      onClick={handleLoginWithGoogle}
-                    >
-                      <i className="fa fa-google"></i> Google
-                    </button>
-                  </div> */}
                 </div>
               </div>
             </div>

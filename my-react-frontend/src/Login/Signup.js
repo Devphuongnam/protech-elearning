@@ -27,7 +27,6 @@ function Signup() {
         .then((res) => {
           alert("Đăng ký thành công");
           navigate("/login");
-          console.log(res.data);
         })
         .catch((error) => {
           if (error.response.status === 409) {
@@ -120,11 +119,11 @@ function Signup() {
                     <div className="text-center">
                       <p>Hoặc đăng nhập với</p>
                       <button
-                        class="btn btn-primary"
+                        className="btn btn-primary"
                         style={{ backgroundColor: "#dd4b39" }}
                         type="submit"
                       >
-                        <i class="fa fa-google"></i> Google
+                        <i className="fa fa-google"></i> Google
                       </button>
                     </div>
                   </form>

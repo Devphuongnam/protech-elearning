@@ -1,0 +1,65 @@
+/* CartPage.css */
+.cart-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  margin-bottom: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  background-color: #9fffba;
+}
+
+.cart-item img {
+  max-width: 100px;
+  margin-right: 16px;
+}
+
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+.cart-item-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cart-item-price {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.remove-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-end; /* Đặt nút remove ở phía bên phải */
+}
+
+.cart-summary {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.checkout-button {
+  background-color: #ec7a49;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
