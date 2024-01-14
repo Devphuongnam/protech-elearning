@@ -1,0 +1,55 @@
+/* MyCourses.css */
+
+/* Thêm kiểu cho container chứa danh sách khoá học */
+.my-courses-container {
+    max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Thêm kiểu cho tiêu đề danh sách */
+.course-list-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Thêm kiểu cho mỗi khoá học */
+.course-card {
+  border: 1px solid #ddd;
+  margin-bottom: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  background-color: #9bffb7;
+}
+
+.course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+.course-title1 {
+    color: rgb(20, 4, 253);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-price1 {
+  color: #982727;
+  font-style: italic;
+}
+
+.course-time-buy {
+    align-self: flex-end;
+    color: #7a5c78;
+}
+
+/* Thêm kiểu cho trạng thái rỗng */
+.empty-state {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #888;
+}

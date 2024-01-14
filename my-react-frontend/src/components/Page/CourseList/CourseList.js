@@ -50,7 +50,7 @@ const CoursesList = () => {
 
   const addToCart = (course) => {
     dispatch({ type: "ADD_TO_CART", payload: course });
-    console.log(`Added course with ID ${course.id} to cart`);
+    console.log(`Đã thêm khoá học với ID: ${course.id} vào giỏ hàng`);
   };
 
   return (
@@ -80,7 +80,14 @@ const CoursesList = () => {
                 Giá: {course.price}$
               </p>
             </Link>
-            <button onClick={() => addToCart(course)}>Add to Cart</button>
+            {course.addedToCart ? (
+              <p>Khoá học đã được thêm vào giỏ hàng</p>
+            ) : (
+              <button onClick={() => addToCart(course)}>
+                Thêm vào giỏ hàng
+              </button>
+            )}
+            {/* <button onClick={() => addToCart(course)}>Add to Cart</button> */}
           </li>
         ))}
       </ul>

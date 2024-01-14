@@ -28,6 +28,7 @@ const CommentList = ({ courseId, reloadComments }) => {
 
   const formattedTime = comments.map(function (item) {
     var itemDateTime = new Date(item.created_at);
+    console.log(itemDateTime);
 
     item.formattedDate = itemDateTime
       .toISOString()

@@ -6,10 +6,15 @@ const CartContext = createContext();
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      return {
-        ...state,
-        items: [...state.items, action.payload],
-      };
+      const isCourseExist = state.items.some(
+        (item) => item.id === action.payload.id
+      );
+      if (!isCourseExist)
+        return {
+          ...state,
+          items: [...state.items, { ...action.payload, addedToCart: true }],
+        };
+      return state;
     case "TOGGLE_CART":
       return {
         ...state,

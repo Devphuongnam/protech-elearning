@@ -53,7 +53,7 @@ function Login() {
 
   return (
     <section className="">
-      <div className="px-4 py-5 pt-5 px-md-5 mx-auto text-center text-lg-start">
+      <div className="px-4 py-5 pt-6 px-md-5 mx-auto text-center text-lg-start">
         <div className="container">
           <div className="row gx-lg-5 align-items-center">
             <div className="col-lg-6 mb-5 mb-lg-10">

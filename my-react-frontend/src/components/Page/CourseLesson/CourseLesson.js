@@ -16,7 +16,6 @@ const CourseLesson = () => {
           `http://localhost:8081/api/courses/${id}/lessons`
         );
         setLessons(response.data);
-        const lessonsLength = response.data.length;
       } catch (error) {
         console.error("Lỗi khi lấy danh sách bài học từ API:", error);
       }

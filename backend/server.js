@@ -8,12 +8,13 @@ const coursesRoutes = require("./routes/coursesRoutes");
 const lessonsRoutes = require("./routes/lessonsRouter");
 const commentsRoutes = require("./routes/commentsRoutes.js");
 const questionsRoutes = require("./routes/questionsRoutes.js");
+const myCourseRoutes = require("./routes/myCourseRoutes.js");
 const app = express();
 
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "http://localhost:3000",
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -25,10 +26,7 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: true,
-    cookie: {
-      secure: false,
-      maxAge: 1000 * 60 * 60 * 24,
-    },
+    cookie: { secure: false },
   })
 );
 
@@ -163,6 +161,8 @@ app.use("/api", lessonsRoutes);
 app.use("/api", commentsRoutes);
 
 app.use("/api", questionsRoutes);
+
+app.use("/api", myCourseRoutes);
 
 app.listen(8081, () => {
   console.log("Server đang lắng nghe trên cổng " + 8081);

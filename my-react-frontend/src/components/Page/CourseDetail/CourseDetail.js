@@ -33,11 +33,8 @@ const CourseDetail = () => {
 
     fetchCourseDetail();
   }, [id]);
-  // const fomattedDate = course.created_at.slice(0, 10);
-  // console.log(fomattedDate);
 
   const handleStartLearning = () => {
-    // Chuyển hướng sang trang mới (LessonsPage) với id của khoá học
     navigate(`/course/${id}/learn`);
   };
 

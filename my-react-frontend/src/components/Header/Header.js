@@ -16,7 +16,6 @@ const Header = () => {
           />
         </a>
       </div>
-      <div className="search-bar">{/* <SearchBar /> */}</div>
       <div className="abc">
         <div className="shopping"></div>
         <div className="user-profile">

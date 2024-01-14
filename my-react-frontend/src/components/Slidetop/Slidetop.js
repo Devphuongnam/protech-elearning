@@ -7,13 +7,11 @@ const Slidetop = () => {
       <div className="carousel-slide">
         <div className="carousel-inner">
           <div className="item-active">
-            <a href="#">
-              <img
-                className="img"
-                src="https://mona.media/wp-content/uploads/2021/03/chia-nho-noi-dung-bai-giang-e-learning.jpg"
-                alt="slide"
-              />
-            </a>
+            <img
+              className="img"
+              src="https://mona.media/wp-content/uploads/2021/03/chia-nho-noi-dung-bai-giang-e-learning.jpg"
+              alt="slide"
+            />
           </div>
         </div>
       </div>

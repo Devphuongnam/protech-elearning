@@ -1,12 +1,13 @@
-// CartPage.js
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./CartList.css";
+import axios from "axios";
 
 const CartPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [totalPrice, setTotalPrice] = useState(0);
+  const [userId, setUserId] = useState(null);
 
   const cartItems =
     location.state && location.state.cartItems ? location.state.cartItems : [];
@@ -26,10 +27,25 @@ const CartPage = () => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
     navigate("/cart", { state: { cartItems: updatedCartItems } });
   };
+
   const handleCheckout = () => {
-    alert("Thanh toán thành công");
-    navigate("/");
+    axios
+      .post("http://localhost:8081/api/checkout", { cartItems, userId })
+      .then((response) => {
+        if (response.data === "Order successful") {
+          // Hiển thị cảnh báo "Thanh toán thành công"
+          alert("Thanh toán thành công");
+          navigate("/");
+          // Thực hiện các hành động sau khi thanh toán thành công
+        } // Nếu server trả về 'Order successful'
+        // Thực hiện các hành động sau khi thanh toán thành công
+      })
+      .catch((error) => {
+        console.error("Error during checkout:", error);
+        // Xử lý lỗi nếu cần thiết
+      });
   };
+
   return (
     <div className="cart-page">
       <h2>Giỏ Hàng</h2>

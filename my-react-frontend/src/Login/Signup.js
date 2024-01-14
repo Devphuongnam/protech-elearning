@@ -115,17 +115,6 @@ function Signup() {
                         Đăng nhập
                       </Link>
                     </div>
-
-                    <div className="text-center">
-                      <p>Hoặc đăng nhập với</p>
-                      <button
-                        className="btn btn-primary"
-                        style={{ backgroundColor: "#dd4b39" }}
-                        type="submit"
-                      >
-                        <i className="fa fa-google"></i> Google
-                      </button>
-                    </div>
                   </form>
                 </div>
               </div>
